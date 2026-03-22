@@ -13,9 +13,9 @@ reverse-mobile/
 ├── SKILLS.md           # Docker-first reverse engineering skill
 ├── AGENT_TEAMS.md      # Agent team roles & workflow
 ├── docker-setup.sh     # Docker readiness script
-├── README.md           # Project README
-├── findings/           # Output directory for analysis results
-└── .claude/           # Claude configuration
+├── README.md          # Project README
+├── findings/          # Output directory for analysis results
+└── .claude/          # Claude configuration
 ```
 
 ## Docker Images Used
@@ -55,7 +55,7 @@ Analysis results go to `findings/[app-name]-[YYYY-MM-DD]/`
 For AI agents to read skill files directly:
 
 ```
-https://raw.githubusercontent.com/{USERNAME}/{REPO}/main/SKILLS.md
-https://raw.githubusercontent.com/{USERNAME}/{REPO}/main/AGENT_TEAMS.md
-https://raw.githubusercontent.com/{USERNAME}/{REPO}/main/docker-setup.sh
+https://raw.githubusercontent.com/binsarjr/reverse-mobile/main/SKILLS.md
+https://raw.githubusercontent.com/binsarjr/reverse-mobile/main/AGENT_TEAMS.md
+https://raw.githubusercontent.com/binsarjr/reverse-mobile/main/docker-setup.sh
 ```

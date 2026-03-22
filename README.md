@@ -7,18 +7,18 @@
 Tell the agent to read the raw files from this repo:
 
 ```
-https://raw.githubusercontent.com/{USERNAME}/{REPO}/main/SKILLS.md
+https://raw.githubusercontent.com/binsarjr/reverse-mobile/main/SKILLS.md
 ```
 
 Example for agent:
-> "Read `https://raw.githubusercontent.com/{USERNAME}/{REPO}/main/SKILLS.md` and use it for reverse engineering the APK in this folder. Run `./docker-setup.sh` first to prepare the Docker environment."
+> "Read `https://raw.githubusercontent.com/binsarjr/reverse-mobile/main/SKILLS.md` and use it for reverse engineering the APK in this folder. Run `./docker-setup.sh` first to prepare the Docker environment."
 
 ### Manual Setup
 
 ```bash
 # Clone this repo
-git clone https://github.com/{USERNAME}/{REPO}.git
-cd {REPO}
+git clone https://github.com/binsarjr/reverse-mobile.git
+cd reverse-mobile
 
 # Prepare Docker environment
 ./docker-setup.sh
@@ -50,19 +50,19 @@ cat SKILLS.md
                  ▼
 ┌─────────────────────────────────────┐
 │ 4. Analyze via Docker               │
-│    (PARALLEL - 6 tasks)           │
+│    (PARALLEL - 6 tasks)            │
 │    - Manifest analysis             │
 │    - Endpoint extraction           │
 │    - Secrets detection             │
 │    - Certificate analysis          │
-│    - Network security              │
+│    - Network security             │
 │    - Third-party SDKs             │
 └────────────────┬────────────────────┘
                  │
                  ▼
 ┌─────────────────────────────────────┐
-│ 5. Deobfuscate (PARALLEL)         │
-│    - Decode Base64/hex/XOR         │
+│ 5. Deobfuscate (PARALLEL)          │
+│    - Decode Base64/hex/XOR          │
 │    - Trace crypto                  │
 │    - Anti-analysis detection       │
 │    - Decoy vs real classification  │
@@ -71,7 +71,7 @@ cat SKILLS.md
                  ▼
 ┌─────────────────────────────────────┐
 │ 6. Report                          │
-│    findings/[app]-[date]/         │
+│    findings/[app]-[date]/          │
 └─────────────────────────────────────┘
 ```
 
@@ -91,20 +91,18 @@ reverse-mobile/
 ├── SKILLS.md           # Docker-first reverse engineering skill (Chinese)
 ├── AGENT_TEAMS.md      # 5-role team configuration (Chinese)
 ├── docker-setup.sh     # Docker readiness script
-├── README.md           # This file
-├── CLAUDE.md           # Project instructions
+├── README.md          # This file
+├── CLAUDE.md          # Project instructions
 └── findings/          # Analysis output directory
 ```
 
 ## Raw File URLs
 
-After pushing to GitHub, replace `{USERNAME}/{REPO}` with your repo:
-
 | File | Raw URL |
 |------|---------|
-| SKILLS.md | `https://raw.githubusercontent.com/{USERNAME}/{REPO}/main/SKILLS.md` |
-| AGENT_TEAMS.md | `https://raw.githubusercontent.com/{USERNAME}/{REPO}/main/AGENT_TEAMS.md` |
-| docker-setup.sh | `https://raw.githubusercontent.com/{USERNAME}/{REPO}/main/docker-setup.sh` |
+| SKILLS.md | `https://raw.githubusercontent.com/binsarjr/reverse-mobile/main/SKILLS.md` |
+| AGENT_TEAMS.md | `https://raw.githubusercontent.com/binsarjr/reverse-mobile/main/AGENT_TEAMS.md` |
+| docker-setup.sh | `https://raw.githubusercontent.com/binsarjr/reverse-mobile/main/docker-setup.sh` |
 
 ## Tips
 
@@ -136,16 +134,4 @@ docker pull zricethezav/gitleaks:latest
 ```bash
 # Ensure -u $(id -u):$(id -g) is used in docker run
 docker run --rm -u $(id -u):$(id -g) -v /path:/work cryptax/android-re jadx ...
-```
-
-## Deploy to GitHub
-
-```bash
-cd /Users/user/Workspaces/pedalaman/reverse-mobile
-git init
-git add .
-git commit -m "Initial commit: Docker-first reverse engineering setup"
-git branch -M main
-git remote add origin https://github.com/{USERNAME}/{REPO}.git
-git push -u origin main
 ```
