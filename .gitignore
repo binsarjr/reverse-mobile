@@ -1,0 +1,15 @@
+# Findings output directory
+findings/
+
+# Claude configuration
+.claude/
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.tmp
+*.log
+
+# Docker (don't commit containers)
+*.dockerignore
